@@ -27,7 +27,7 @@
 
 자세한 github flow의 과정을 알아보자.
 
-1. master 브랜치에서 개발이 시작된다.
+> 1. master 브랜치에서 개발이 시작된다.
 2. 기능 구현이나 버그가 발생하면 issue를 작성한다.
 3. 팀원들이 issue 해결을 위해 master 브랜치에서 생성한 feature/{구현기능} 브랜치에서 개발을 하고 commit log를 작성한다.
 4. push를 하면 pull request를 날릴 수 있다.
