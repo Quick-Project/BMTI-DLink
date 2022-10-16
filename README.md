@@ -24,6 +24,8 @@
 * github flow는 master 브랜치 하나만을 가지고 진행하는 방식이다.
 * master 브랜치는 어떤 기능이 구현되든, 오류가 수정되든 모두 master에 머지되어 항상 update된 상태를 유지한다.
 
+![image](https://user-images.githubusercontent.com/107832252/196041283-603bd3aa-c2b8-46d0-a211-6f1d06e83279.png)
+
 
 자세한 github flow의 과정을 알아보자.
 
