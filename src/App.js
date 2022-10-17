@@ -1,7 +1,11 @@
 import React from 'react';
-import Loading from './components/Loading';
 
 function App() {
-  return <Loading />;
+  const hi = 'hi';
+  return (
+    <div>
+      <span>hi 안녕하세요!!!!</span>
+    </div>
+  );
 }
 export default App;
