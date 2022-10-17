@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Lottie from 'react-lottie';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import animation from '../assets/animation/47127-glass-of-cocktail.json';
 
 const Background = styled.div`
@@ -11,9 +11,34 @@ const Background = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgb(253, 240, 234);
-  > div {
-    font-size: 32px;
-  }
+`;
+
+const bounce = keyframes`
+    100% {
+        top: -5px;
+        text-shadow: 0 1px 0 #CCC,
+                 0 2px 0 #CCC,
+                 0 3px 0 #CCC,
+                 0 4px 0 #CCC,
+                 0 5px 0 #CCC,
+                 0 6px 0 #CCC,
+                 0 7px 0 #CCC,
+                 0 8px 0 #CCC,
+                 0 9px 0 #CCC,
+                 0 50px 25px rgba(0, 0, 0, .2);
+    
+    }
+`;
+
+const Ment = styled.div`
+  transform: translate(0%, -35%);
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+  animation: ${bounce} 0.4s ease-in-out infinite alternate;
 `;
 
 const Loading = () => {
@@ -35,7 +60,7 @@ const Loading = () => {
   return (
     <Background>
       <Lottie options={defaultOptions} width="400px" height="400px"></Lottie>
-      <div>{text}</div>
+      <Ment>{text}</Ment>
     </Background>
   );
 };

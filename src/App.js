@@ -1,6 +1,7 @@
 import React from 'react';
+import Loading from './components/Loading';
 
 function App() {
-  return <div>안녕하세요</div>;
+  return <Loading />;
 }
 export default App;
