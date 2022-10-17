@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import React from 'react';
 
 const GraphContainer = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 const Graph_wrap = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const Graph_wrap = styled.div`
   background-color: rgba(eee, 0.3);
   height: 150px;
   width: 500px;
-`
+`;
 
 const Bar = styled.div`
   width: 20px;
@@ -38,7 +39,7 @@ const Bar = styled.div`
     top: -20px;
     text-align: center;
   }
-`
+`;
 const Line = styled.div`
   position: absolute;
   height: 3px;
@@ -46,39 +47,67 @@ const Line = styled.div`
   height: 5px;
   width: 170px;
   bottom: -3px;
-`
+`;
 // 유동적인 스타일을 위한 BMIT 더미 데이터입니다.
 const BMTI = [
-  {type: "S", point: 3},
-  {type: "L", point: 2},
-  {type: "C", point: 3},
-  {type: "T", point: 2},
-]
+  { type: 'S', point: 3 },
+  { type: 'L', point: 2 },
+  { type: 'C', point: 3 },
+  { type: 'T', point: 2 },
+];
 
 const Graph = () => {
   return (
     <GraphContainer>
       <Graph_wrap>
-        <Bar height={`${BMTI[0].point * 30}px`} color="#aee4ff" borderColor="#AEBAFF"> 
-          <span> <strong> {BMTI[0].type} </strong> </span>
+        <Bar
+          height={`${BMTI[0].point * 30}px`}
+          color="#aee4ff"
+          borderColor="#AEBAFF"
+        >
+          <span>
+            {' '}
+            <strong> {BMTI[0].type} </strong>{' '}
+          </span>
           <span> {BMTI[0].point} </span>
         </Bar>
-        <Bar height={`${BMTI[1].point * 30}px`} color="#ffafb8" borderColor="#FF84B8"> 
-          <span> <strong> {BMTI[1].type} </strong> </span>
+        <Bar
+          height={`${BMTI[1].point * 30}px`}
+          color="#ffafb8"
+          borderColor="#FF84B8"
+        >
+          <span>
+            {' '}
+            <strong> {BMTI[1].type} </strong>{' '}
+          </span>
           <span> {BMTI[1].point} </span>
         </Bar>
-        <Bar height={`${BMTI[2].point * 30}px`} color="#caa5fe" borderColor="#CA7FFE"> 
-          <span> <strong> {BMTI[2].type} </strong> </span> 
+        <Bar
+          height={`${BMTI[2].point * 30}px`}
+          color="#caa5fe"
+          borderColor="#CA7FFE"
+        >
+          <span>
+            {' '}
+            <strong> {BMTI[2].type} </strong>{' '}
+          </span>
           <span> {BMTI[2].point} </span>
         </Bar>
-        <Bar height={`${BMTI[3].point * 30}px`} color="#dfd4e4" borderColor="#DACAD9"> 
-          <span> <strong> {BMTI[3].type} </strong> </span> 
+        <Bar
+          height={`${BMTI[3].point * 30}px`}
+          color="#dfd4e4"
+          borderColor="#DACAD9"
+        >
+          <span>
+            {' '}
+            <strong> {BMTI[3].type} </strong>{' '}
+          </span>
           <span> {BMTI[3].point} </span>
         </Bar>
-        <Line/>
+        <Line />
       </Graph_wrap>
     </GraphContainer>
-  )
-}
+  );
+};
 
 export default Graph;
