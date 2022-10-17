@@ -1,5 +1,6 @@
+import React from 'react';
+
 function App() {
-  const hi = "hi"
-  return(<div><span>hi 안녕하세요</span></div>);
+  return <div>안녕하세요</div>;
 }
 export default App;
