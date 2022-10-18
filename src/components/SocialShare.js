@@ -104,5 +104,4 @@ SocialShare.propTypes = {
   _title: PropTypes.string.isRequired,
   _sub: PropTypes.string.isRequired,
   _imageUrl: PropTypes.string.isRequired,
-  setCocktailType: PropTypes.func.isRequired,
 };
