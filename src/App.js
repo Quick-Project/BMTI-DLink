@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Home from './pages/Home';
+import Custom from './pages/Custom';
 
 const WebPage = styled.article`
   width: 100vw;
@@ -22,7 +23,8 @@ const MobileFit = styled.div`
   border: 1px solid red;
 
   @media (max-width: 800px) {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
   }
 `;
 
@@ -37,6 +39,7 @@ function App() {
         <MobileFit>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/custom" element={<Custom />} />
           </Routes>
         </MobileFit>
       </WebPage>
