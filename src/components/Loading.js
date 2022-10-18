@@ -53,7 +53,7 @@ const Loading = ({ cocktailType }) => {
   useEffect(() => {
     setTimeout(() => {
       setText('칵테일이 만들어졌어요!');
-      if (cocktailType.length > 1) {
+      if (cocktailType.point.length > 1) {
         navigate('/resultScreen');
       } else {
         navigate('/ppak');

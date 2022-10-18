@@ -86,7 +86,6 @@ const BmtiContents = styled.div`
   justify-content: start;
   align-items: flex-start;
   text-align: center;
-  border: 1px solid red;
 `;
 
 const BmtiViewMoreTitle = styled.div`
@@ -176,6 +175,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
           _imageUrl={
             'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
           }
+          setCocktailType={setCocktailType}
         />
       </ShareContents>
 
@@ -197,7 +197,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
       <BmtiContents>
         <Comments>{filter[0].bmtiComment4}</Comments>
         <Comments>{filter[0].bmtiComment5}</Comments>
-        <HilightComments>{filter[0].bmtiComment6}</HilightComments>
+        <Comments>{filter[0].bmtiComment6}</Comments>
         <Comments>{filter[0].bmtiComment7}</Comments>
         <Comments>{filter[0].bmtiComment8}</Comments>
       </BmtiContents>
@@ -231,6 +231,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
           _imageUrl={
             'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
           }
+          setCocktailType={setCocktailType}
         />
       </ShareContents>
     </ResultContain>
