@@ -45,8 +45,17 @@ function App() {
     setCocktailType(cocktailResult);
   };
 
-  const MBTIdata = () => {
-    console.log('hi');
+  const BMTIdata = () => {
+    const type = cocktailType.type;
+    const point = cocktailType.point;
+    const data = [];
+    for (let i = 0; i < 4; i++) {
+      const braket = {};
+      braket['type'] = type[i];
+      braket['point'] = point[i];
+      data.push(braket);
+    }
+    return data;
   };
 
   return (
@@ -72,7 +81,7 @@ function App() {
               path="/resultScreen"
               element={
                 <ResultScreen
-                  MBTIdata={MBTIdata}
+                  BMTIdata={BMTIdata}
                   cocktailType={cocktailType}
                   setCocktailType={setCocktailType}
                 />

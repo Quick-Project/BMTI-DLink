@@ -109,8 +109,8 @@ const ShareContents = styled.div`
   margin-top: 40px;
 `;
 
-const ResultScreen = ({ cocktailType, MBTIdata, setCocktailType }) => {
-  const [bmtiData, setBMTIdata] = useState(MBTIdata());
+const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
+  const [bmtiData, setBMTIdata] = useState(BMTIdata());
 
   let filter = cocktailData.filter((ele) => {
     return cocktailType.type === ele.type;
