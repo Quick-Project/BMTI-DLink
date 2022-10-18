@@ -21,6 +21,7 @@ const Head = styled.div`
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
   transform: perspective(10px) rotateX(-1deg);
+  z-index: 1;
 `;
 
 const HeadCup = styled.div`
@@ -33,12 +34,12 @@ const HeadCup = styled.div`
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
   transform: perspective(10px) rotateX(-1deg);
+  z-index: 1;
 `;
 
 const Handler = styled.img`
   position: absolute;
   top: 53%;
-  z-index: -1;
 `;
 
 const OneColor = styled.div`
