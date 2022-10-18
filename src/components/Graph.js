@@ -49,14 +49,15 @@ const Line = styled.div`
   bottom: -3px;
 `;
 // 유동적인 스타일을 위한 BMIT 더미 데이터입니다.
-const BMTI = [
-  { type: 'S', point: 3 },
-  { type: 'L', point: 2 },
-  { type: 'C', point: 3 },
-  { type: 'T', point: 2 },
-];
+// const BMTI = [
+//   { type: 'S', point: 3 },
+//   { type: 'L', point: 2 },
+//   { type: 'C', point: 3 },
+//   { type: 'T', point: 2 },
+// ];
 
-const Graph = () => {
+const Graph = ({ BMTI }) => {
+  console.log(BMTI);
   return (
     <GraphContainer>
       <Graph_wrap>

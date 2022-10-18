@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { cocktailData, dataList, showMoreBmti, ppakk } from '../data/dummyData';
-
-const ppakScreen = () => {
+import { ppakk } from '../assets/data/dummyData';
+//cocktailType
+const PpakScreen = ({ cocktailType }) => {
   const ResultContain = styled.div`
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@ const ppakScreen = () => {
     text-align: center;
     margin-top: 140px;
     @media screen and (max-width: 500px) {
-      margin-top: 0in;
+      margin-top: 10px;
     }
   `;
 
@@ -86,4 +86,4 @@ const ppakScreen = () => {
   );
 };
 
-export default ppakScreen;
+export default PpakScreen;

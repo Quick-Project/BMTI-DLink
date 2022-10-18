@@ -1,26 +1,80 @@
-import React from 'react';
-import SocialShare from './components/SocialShare';
-import ProgressBar from './components/ProgressBar';
-import Graph from './components/Graph';
-import ResultScreen from './pages/ResultScreen';
-import Ppak from './pages/ppak';
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import styled from 'styled-components';
+import QuestionScreen from './pages/QuestionScreen';
+import Home from './pages/Home';
+import Loading from './components/Loading';
+import PpakScreen from './pages/ppak';
+const WebPage = styled.article`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    ${(props) => props.one} 0%,
+    ${(props) => props.two} 100%
+  );
+  overflow: auto;
+`;
+
+const MobileFit = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 50%;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+`;
 
 function App() {
-  const hi = 'hi';
+  // 그라디언트 state
+  const [one, setOne] = useState('white');
+  const [two, setTwo] = useState('skyblue');
+  const [cocktailType, setCocktailType] = useState({
+    type: '',
+    point: [],
+  });
+  const cockTailSetting = (cocktailResult) => {
+    setCocktailType(cocktailResult);
+  };
   return (
-    <div>
-      {/* <Ppak /> */}
-      <ResultScreen />
-      <span>
-        {/* <SocialShare
-          _title={'DEEP'}
-          _sub={'파우스트'}
-          _imageUrl={
-            'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
-          }
-        /> */}
-      </span>
-    </div>
+    <BrowserRouter>
+      <WebPage one={one} two={two}>
+        <MobileFit>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/question"
+              element={
+                <QuestionScreen
+                  cocktailType={cocktailType}
+                  cockTailSetting={cockTailSetting}
+                />
+              }
+            />
+            <Route
+              path="/loading"
+              element={<Loading cocktailType={cocktailType} />}
+            />
+            <Route
+              path="/resultScreen"
+              element={
+                <ResultScreen
+                  cocktailType={cocktailType}
+                  setCocktailType={setCocktailType}
+                />
+              }
+            />
+            <Route
+              path="/ppak"
+              element={<PpakScreen cocktailType={cocktailType} />}
+            />
+          </Routes>
+        </MobileFit>
+      </WebPage>
+    </BrowserRouter>
   );
 }
 export default App;

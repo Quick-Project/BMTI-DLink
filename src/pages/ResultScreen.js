@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { cocktailData, dataList, showMoreBmti } from '../data/dummyData';
+import { cocktailData, dataList, showMoreBmti } from '../assets/data/dummyData';
 import SocialShare from '../components/SocialShare';
 import Graph from '../components/Graph';
 
 const ResultContain = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-top: 50px;
 `;
@@ -86,6 +86,7 @@ const BmtiContents = styled.div`
   justify-content: start;
   align-items: flex-start;
   text-align: center;
+  border: 1px solid red;
 `;
 
 const BmtiViewMoreTitle = styled.div`
@@ -104,99 +105,189 @@ const BmtiViewMore = styled.div`
 const ShareContents = styled.div`
   font-size: x-large;
   font-weight: bold;
-  margin: 50px;
-  color: blue;
+  color: black;
+  margin-top: 40px;
 `;
 
-const ResultScreen = () => {
+const ResultScreen = ({ cocktailType, MBTIdata, setCocktailType }) => {
+  const [bmtiData, setBMTIdata] = useState(MBTIdata());
+  // 로직 -> map으로 더미데이터 순회 ->
+
+  let filter = cocktailData.filter((ele) => {
+    return cocktailType.type === ele.type;
+  });
+  // 현재 전달된 BMTI - Number(filter.point.join(''))
+  /* 
+  
+  우리가 SLMT -> 하이볼,잭콕
+  두 개 다 불러와서 cocktailType => point
+  3313  - 2222 = ??  //
+  2222
+  2109
+  1332 - 2222 = ?? if(SLMT point < cocktailTypepoint){
+  3222 - 1332 
+  900
+  }
+  2222
+  포인트는 살려야됨. 근데 나먼저 죽을거같음,,,
+  범인은,.,,,,, 나자신,,,,,
+  */
+
+  if (filter.length > 1) {
+    const type = cocktailType.type;
+    const point = cocktailType.point;
+
+    const filtered = (item) => {
+      return cocktailData.filter((ele) => item === ele.cocktail);
+    };
+
+    switch (type) {
+      case 'BDCF':
+        filter = point[0] > 1 ? filtered('파우스트') : filtered('맨해튼');
+        break;
+      case 'BLCT':
+        filter = point[3] > 1 ? filtered('진 토닉') : filtered('소맥');
+        break;
+      case 'BDMT':
+        filter = point[1] > 2 ? filtered('마가리타') : filtered('블랙러시안');
+        break;
+      case 'SLCT':
+        filter =
+          point[1] > 1 ? filtered('피치크러시') : filtered('스크류 드라이버');
+        break;
+      case 'SLMT':
+        filter = point[0] > 1 ? filtered('하이볼') : filtered('잭콕');
+        break;
+    }
+    // 우리가 조사한 로직중에 겹치는것은 3이상 없음 0과 1만 비교하면됨
+    // let ele1 = Number(filter[0].point.join(''));
+    // let ele2 = Number(filter[1].point.join(''));
+    // let baseNum = Number(cocktailType.point.join(''));
+    // if (ele1 > baseNum) {
+    //   ele1 = ele1 - baseNum;
+    // } else {
+    //   ele1 = baseNum - ele1;
+    // }
+
+    // if (ele2 > baseNum) {
+    //   ele2 = ele2 - baseNum;
+    // } else {
+    //   ele2 = baseNum - ele2;
+    // }
+    // console.log(filter[1]);
+    // if (ele1 < ele2) {
+    //   // 요렇게 하면 그냥 filter[0]에서 잡으면 되용
+    //   filter = [...filter[0]]; // filter = [{원본 데이터가 들어갑니다}]
+    // } else {
+    //   filter = [...filter[1]]; // <= 궁금한게 있는데 이러면 filter에 뭐가 들어오나요?
+    // }
+    // const point = filter.map((ele) => {
+    //   const propsNum = Number(cocktailType.point.join(''));
+    //   const eleNum = Number(ele.point.join(''));
+    //   return propsNum > eleNum ? propsNum - eleNum : eleNum - propsNum;
+    // });
+    // console.log(point);
+  }
+
+  /* filter가 있는 더미 데이터 속 index 값을 가져와야한단 말이죠. */
+  // 그러면 이게 인덱스를 바꾸지말구 저희 어차피 [0]인 상태에 고정되있어서 앞에 변수만 바꿔주면 될고같아용
+
+  // 잠깐 주석처리좀하겟습니다
+  // const Index = () => {
+  //   let fIndex = showMoreBmti.findIndex((el)=>{el.type === cocktailType.type})
+  //   return fIndex showmore[{Index}]
+  // }
+  const bmtiDetail = showMoreBmti.filter((x) =>
+    cocktailType.type.includes(x.type)
+  );
+
   return (
-    <div>
-      <ResultContain cocktailData={cocktailData}>
-        <div>당신에게 추천할 칵테일은 바로</div>
-        <h1>{`" ${cocktailData[0].cocktail} "`}</h1>
-        {console.log(cocktailData[0].cocktail)}
+    <ResultContain>
+      <div>당신에게 추천할 칵테일은 바로</div>
+      <h1>{`" ${filter[0].cocktail} "`}</h1>
+      {console.log(filter[0].cocktail)}
 
-        <ResultImg src={cocktailData[0].cocktailImg} />
+      <ResultImg src={filter[0].cocktailImg} />
 
-        <TitleCocktail>
-          <CocktailComments>• {cocktailData[0].comment1}</CocktailComments>
-          <CocktailComments>• {cocktailData[0].comment2}</CocktailComments>
-          <CocktailComments>• {cocktailData[0].comment3}</CocktailComments>
-        </TitleCocktail>
+      <TitleCocktail>
+        <CocktailComments>• {filter[0].comment1}</CocktailComments>
+        <CocktailComments>• {filter[0].comment2}</CocktailComments>
+        <CocktailComments>• {filter[0].comment3}</CocktailComments>
+      </TitleCocktail>
 
-        <MidBmtiComments>당신의 BMTI 성향은?</MidBmtiComments>
-        <HilightBmtiContain>
-          <HilightBmitComments>
-            [ {cocktailData[0].bmtiResult} ]
-          </HilightBmitComments>
-          <Comments>입니다!</Comments>
-        </HilightBmtiContain>
-        <Graph />
+      <MidBmtiComments>당신의 BMTI 성향은?</MidBmtiComments>
+      <HilightBmtiContain>
+        <HilightBmitComments>[ {filter[0].type} ]</HilightBmitComments>
+        <Comments>입니다!</Comments>
+      </HilightBmtiContain>
+      <Graph BMTI={bmtiData} />
 
-        <ShareContents>
-          <SocialShare
-            _title={'DEEP'}
-            _sub={'파우스트'}
-            _imageUrl={
-              'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
-            }
-          />
-        </ShareContents>
+      <ShareContents>
+        <SocialShare
+          _title={'DEEP'}
+          _sub={'파우스트'}
+          _imageUrl={
+            'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
+          }
+        />
+      </ShareContents>
 
-        <BmtiTitle>
-          <BmtiTitleContents>
-            <HilightComments>
-              {`${cocktailData[0].bmtiComment1}의 성향을 가진 당신!`}
-            </HilightComments>
-            <div>{`그리고`}</div>
-          </BmtiTitleContents>
-          <BmtiTitleContents>
-            <HilightComments>{`" ${cocktailData[0].bmtiComment2} "`}</HilightComments>
-            <Comments>{cocktailData[0].bmtiComment3}은?</Comments>
-          </BmtiTitleContents>
-        </BmtiTitle>
+      <BmtiTitle>
+        <BmtiTitleContents>
+          <HilightComments>
+            {`${filter[0].bmtiComment1}의 성향을 가진 당신!`}
+          </HilightComments>
+          <div>{`그리고`}</div>
+        </BmtiTitleContents>
+        <BmtiTitleContents>
+          <HilightComments>{`" ${filter[0].bmtiComment2} "`}</HilightComments>
+          <Comments>{filter[0].bmtiComment3}은?</Comments>
+        </BmtiTitleContents>
+      </BmtiTitle>
 
-        <BmtiImg src={cocktailData[0].bmtiImg} />
+      <BmtiImg src={filter[0].bmtiImg} />
 
-        <BmtiContents>
-          <Comments>{cocktailData[0].bmtiComment4}</Comments>
-          <Comments>{cocktailData[0].bmtiComment5}</Comments>
-          <HilightComments>{cocktailData[0].bmtiComment6}</HilightComments>
-          <Comments>{cocktailData[0].bmtiComment7}</Comments>
-          <Comments>{cocktailData[0].bmtiComment8}</Comments>
-        </BmtiContents>
-
-        <BmtiViewMoreTitle>성향 해설</BmtiViewMoreTitle>
-        <BmtiViewMore>
-          <Comments>
-            {showMoreBmti[0].type}({showMoreBmti[0].fullType}) :{' '}
-            {showMoreBmti[0].comment}
-          </Comments>
-          <Comments>
-            {showMoreBmti[2].type}({showMoreBmti[2].fullType}) :{' '}
-            {showMoreBmti[2].comment}
-          </Comments>
-          <Comments>
-            {showMoreBmti[5].type}({showMoreBmti[5].fullType}) :{' '}
-            {showMoreBmti[5].comment}
-          </Comments>
-          <Comments>
-            {showMoreBmti[6].type}({showMoreBmti[6].fullType}) :{' '}
-            {showMoreBmti[6].comment}
-          </Comments>
-        </BmtiViewMore>
-        <br />
-        <ShareContents>
-          <SocialShare
-            _title={'DEEP'}
-            _sub={'파우스트'}
-            _imageUrl={
-              'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
-            }
-          />
-        </ShareContents>
-      </ResultContain>
-    </div>
+      <BmtiContents>
+        <Comments>{filter[0].bmtiComment4}</Comments>
+        <Comments>{filter[0].bmtiComment5}</Comments>
+        <HilightComments>{filter[0].bmtiComment6}</HilightComments>
+        <Comments>{filter[0].bmtiComment7}</Comments>
+        <Comments>{filter[0].bmtiComment8}</Comments>
+      </BmtiContents>
+      {/* -------------------------------이 아래는 또 다른 로직으로 접근해야할 거 같은데 모르겠군요------------------------------------------------- */}
+      {/*  type = 'BMTI' type[0] B === showmodsflkj[0].type 'B' */}
+      {/* cocktailType */}
+      <BmtiViewMoreTitle>성향 해설</BmtiViewMoreTitle>
+      <BmtiViewMore>
+        <Comments>
+          {bmtiDetail[0].type}({bmtiDetail[0].fullType}) :{' '}
+          {bmtiDetail[0].comment}
+        </Comments>
+        <Comments>
+          {bmtiDetail[1].type}({bmtiDetail[1].fullType}) :{' '}
+          {bmtiDetail[1].comment}
+        </Comments>
+        <Comments>
+          {bmtiDetail[2].type}({bmtiDetail[2].fullType}) :{' '}
+          {bmtiDetail[2].comment}
+        </Comments>
+        <Comments>
+          {bmtiDetail[3].type}({bmtiDetail[3].fullType}) :{' '}
+          {bmtiDetail[3].comment}
+        </Comments>
+      </BmtiViewMore>
+      <br />
+      <ShareContents>
+        <SocialShare
+          _title={'DEEP'}
+          _sub={'파우스트'}
+          _imageUrl={
+            'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
+          }
+          setCocktailType={setCocktailType}
+        />
+      </ShareContents>
+    </ResultContain>
   );
 };
 
