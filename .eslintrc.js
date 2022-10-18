@@ -27,5 +27,7 @@ module.exports = {
         trailingComma: 'es5',
       },
     ],
+    'import/no-unresolved': 'off',
+    'react/prop-types': 'off',
   },
 };
