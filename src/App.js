@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import QuestionScreen from './pages/QuestionScreen';
 import Home from './pages/Home';
 import Loading from './components/Loading';
+
 const WebPage = styled.article`
   width: 100vw;
   height: 100vh;
