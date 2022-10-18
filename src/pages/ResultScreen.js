@@ -5,11 +5,14 @@ import SocialShare from '../components/SocialShare';
 import Graph from '../components/Graph';
 
 const ResultContain = styled.div`
+  position: relative;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-top: 50px;
+  width: 90%;
 `;
 
 const ResultImg = styled.img`
@@ -22,9 +25,9 @@ const TitleCocktail = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  @media screen and (max-width: 500px) {
+  /* @media screen and (max-width: 500px) {
     width: 85%;
-  }
+  } */
 `;
 
 const BmtiImg = styled.img`
@@ -105,14 +108,21 @@ const ShareContents = styled.div`
   font-size: x-large;
   font-weight: bold;
   color: black;
+  margin-top: 100px;
 `;
 
 const ResultScreen = (cocktailType) => {
+  let dataIndex = () => {
+    cocktailType.findIndex((el) => {
+      el.type === cocktailData.type;
+      console.log(dataIndex);
+    });
+  };
+
   return (
     <ResultContain cocktailData={cocktailData}>
       <div>당신에게 추천할 칵테일은 바로</div>
       <h1>{`" ${cocktailData[0].cocktail} "`}</h1>
-      {console.log(cocktailData[0].cocktail)}
 
       <ResultImg src={cocktailData[0].cocktailImg} />
 
