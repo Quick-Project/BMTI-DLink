@@ -1,4 +1,4 @@
-const dataList = [
+export const dataList = [
   //Quick_Project_Dummy_Data
   //SvsB Q
   [

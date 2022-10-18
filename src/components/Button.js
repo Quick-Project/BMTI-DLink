@@ -22,9 +22,9 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ text, funcProps, height }) => {
+const Button = ({ choice, text, funcProps = function () {}, height }) => {
   return (
-    <StyledButton onClick={funcProps} height={height}>
+    <StyledButton id={choice} onClick={(e) => funcProps(e)} height={height}>
       {text}
     </StyledButton>
   );

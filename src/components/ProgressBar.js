@@ -4,12 +4,7 @@ import PropTypes from 'prop-types';
 
 function ProgressBar({ width }) {
   return (
-    <Container
-      onClick={() => {
-        add_count();
-      }}
-    >
-      {/*%로 부모넓이의 1/5 씩 넓어짐*/}
+    <Container>
       <Progress width={width} />
       <Dot />
     </Container>
@@ -21,7 +16,7 @@ export default ProgressBar;
 const Container = styled.div`
   margin-bottom: 20px;
   background-color: #eee;
-  width: 500px;
+  width: 40vw;
   height: 20px;
   display: flex;
   align-items: center;
