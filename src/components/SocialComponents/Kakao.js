@@ -20,6 +20,7 @@ const KakaoImg = styled.img`
   border-radius: 50%;
 `;
 
+// _title : 칵테일,_sub : BMTI
 export default function Kakao({ _title, _sub, _imageUrl }) {
   useEffect(() => {
     // 카카오톡 sdk 추가
@@ -44,8 +45,8 @@ export default function Kakao({ _title, _sub, _imageUrl }) {
       kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
-          title: `저의 BMTI는 ${_title}이에요`,
-          description: ` 저와 어울리는 칵테일은 ${_sub}에요!
+          title: `저와 어울리는 칵테일은 ${_title}에요!`,
+          description: ` 저의 BMTI는 ${_sub}에요
             \n 당신의 BMTI는 무엇인지 궁금하지 않으신가요? 같이 찾아봐요`,
           imageUrl: `${_imageUrl}`,
           link: {
