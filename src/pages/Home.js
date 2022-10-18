@@ -4,10 +4,13 @@ import styled from 'styled-components';
 import MainCocktail from './../assets/img/cocktail/home.png';
 
 import Button from '../components/Button';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Main = styled.div`
   padding: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Title = styled.div`
@@ -22,6 +25,7 @@ const Img = styled.img`
 `;
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <Main>
       <Title>
@@ -29,9 +33,11 @@ const Home = () => {
         <div>나와 어울리는 칵테일 찾기</div>
       </Title>
       <Img src={MainCocktail} alt="main" />
-      <Link to="/question">
-        <Button text="시작하기" height="70px" />
-      </Link>
+      <Button
+        text="시작하기"
+        funcProps={(e) => navigate('/question')}
+        height="70px"
+      />
     </Main>
   );
 };

@@ -26,14 +26,14 @@ const bounce = keyframes`
                  0 8px 0 #CCC,
                  0 9px 0 #CCC,
                  0 50px 25px rgba(0, 0, 0, .2);
-    
     }
 `;
 
 const Ment = styled.div`
   transform: translate(0%, -35%);
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 700;
+  text-align: center;
   position: relative;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
     0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
@@ -55,7 +55,7 @@ const Loading = () => {
       setText('칵테일이 만들어졌어요!');
       // 결과페이지 랜딩 코드 추가
     }, 3000);
-  });
+  }, []);
 
   return (
     <Background>
