@@ -7,6 +7,7 @@ const StyledButton = styled.button`
   justify-content: center;
   background-color: #449ff7;
   width: 310px;
+  word-break: keep-all;
   height: ${(props) => props.height || '40px'};
   color: white;
   border-radius: 15px;
@@ -15,6 +16,7 @@ const StyledButton = styled.button`
   border: 0;
   outline: 0;
   margin: 0 0 25px 0;
+  padding: 15px;
   font-weight: bold;
   text-decoration: none;
   :hover {
