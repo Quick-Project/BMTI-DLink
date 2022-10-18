@@ -7,9 +7,9 @@ import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom';
 
 const Main = styled.div`
-  padding: 45px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -18,10 +18,13 @@ const Title = styled.div`
   font-size: 33px;
   font-weight: 700;
   text-align: center;
+  @media (max-width: 800px) {
+    margin: 5% 20%;
+  }
 `;
 
 const Img = styled.img`
-  margin: 93px 0 55px 0;
+  margin: 93px 10% 55px 0;
 `;
 
 const Home = () => {

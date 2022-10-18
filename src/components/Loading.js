@@ -3,6 +3,7 @@ import Lottie from 'react-lottie';
 import styled, { keyframes } from 'styled-components';
 import animation from '../assets/animation/47127-glass-of-cocktail.json';
 import { useNavigate } from 'react-router-dom';
+
 const Background = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,7 +36,10 @@ const Ment = styled.div`
   transform: translate(0%, -35%);
   font-size: 32px;
   font-weight: 700;
+  text-align: center;
+  margin: 0 10%;
   position: relative;
+  word-break: keep-all;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
     0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
     0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
@@ -43,7 +47,9 @@ const Ment = styled.div`
 `;
 
 const Loading = ({ cocktailType }) => {
-  const [text, setText] = useState('당신을 위한 칵테일을 제조 중입니다...');
+  const [text, setText] = useState(
+    '당신에게 어울리는 칵테일을 제조 중입니다...'
+  );
   const defaultOptions = {
     renderer: 'svg',
     loop: false,
