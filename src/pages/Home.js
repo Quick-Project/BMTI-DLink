@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import MainCocktail from './../assets/img/cocktail/home.png';
 
 import Button from '../components/Button';
+import { Link } from 'react-router-dom';
 
 const Main = styled.div`
   padding: 45px;
@@ -21,9 +22,6 @@ const Img = styled.img`
 `;
 
 const Home = () => {
-  const ex = () => {
-    console.log('hi');
-  };
   return (
     <Main>
       <Title>
@@ -31,8 +29,9 @@ const Home = () => {
         <div>나와 어울리는 칵테일 찾기</div>
       </Title>
       <Img src={MainCocktail} alt="main" />
-      {/* 승새 수정내용 */}
-      <Button />
+      <Link to="/question">
+        <Button text="시작하기" height="70px" />
+      </Link>
     </Main>
   );
 };
