@@ -1,5 +1,7 @@
 import React from 'react';
 import SocialShare from './components/SocialShare';
+import ProgressBar from './components/ProgressBar';
+import Graph from './components/Graph';
 
 function App() {
   const hi = 'hi';
