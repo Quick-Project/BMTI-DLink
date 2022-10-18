@@ -59,7 +59,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <WebPage one={one} two={two}>
         <MobileFit>
           <Routes>
