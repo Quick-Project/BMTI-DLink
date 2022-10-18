@@ -16,14 +16,15 @@ const ButtonContainerMain = styled.div`
   background-color: #95d4e2;
   padding: 1rem;
   width: 100%;
+  height: 200px;
 `;
 
 const Copy = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  z-index: 3;
+  position: relative;
+  z-index: 1000;
   width: 200px;
   height: 2rem;
   font-size: large;
@@ -31,7 +32,7 @@ const Copy = styled.div`
   opacity: 0.5;
   border-radius: 8px;
   background-color: #cfcfcf;
-  top: 140px;
+  bottom: 50px;
 `;
 // 제목과 버튼을 감싸는 컨테이너
 const FlexContainer = styled.div`
@@ -62,12 +63,12 @@ export default function SocialShare({
   _imageUrl,
   setCocktailType,
 }) {
-  const [copy, setCopy] = useState(false);
+  // const [copy, setCopy] = useState(false);
   const onClickCopy = () => {
-    setCopy(true);
-    setTimeout(() => {
-      setCopy(false);
-    }, 1000);
+    //   setCopy(true);
+    //   setTimeout(() => {
+    //     setCopy(false);
+    //   }, 1000);
   };
   const navigate = useNavigate();
 
@@ -82,7 +83,7 @@ export default function SocialShare({
           <FaceBook />
           <LinkCopy onClick={onClickCopy} />
         </BtnContainer>
-        {copy && <Copy>주소가 복사되었습니다</Copy>}
+        {/* {copy && <Copy>주소가 복사되었습니다</Copy>} */}
 
         <Button
           text="한잔 더?"

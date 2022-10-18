@@ -45,8 +45,8 @@ export default function Kakao({ _title, _sub, _imageUrl }) {
       kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
-          title: `저와 어울리는 칵테일은 ${_title}에요!`,
-          description: ` 저의 BMTI는 ${_sub}에요
+          title: `나와 어울리는 칵테일은 ${_title}!`,
+          description: `나의 BMTI는 ${_sub}에요!
             \n 당신의 BMTI는 무엇인지 궁금하지 않으신가요? 같이 찾아봐요`,
           imageUrl: `${_imageUrl}`,
           link: {
@@ -56,15 +56,10 @@ export default function Kakao({ _title, _sub, _imageUrl }) {
         },
         buttons: [
           {
-            title: '테스트 해줘',
+            title: '인생 칵테일 찾기',
             link: {
               webUrl: process.env.REACT_APP_SHARE_URL,
-            },
-          },
-          {
-            title: '테스트 해줘',
-            link: {
-              webUrl: process.env.REACT_APP_SHARE_URL,
+              mobileWebUrl: process.env.REACT_APP_SHARE_URL,
             },
           },
         ],
