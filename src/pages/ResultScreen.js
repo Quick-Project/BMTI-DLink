@@ -154,7 +154,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
   const bmtiDetail = showMoreBmti.filter((x) =>
     cocktailType.type.includes(x.type)
   );
-  console.log(filter);
+
   return (
     <ResultContain>
       <div>당신에게 추천할 칵테일은 바로</div>
