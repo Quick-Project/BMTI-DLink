@@ -9,8 +9,11 @@ const WebPage = styled.article`
   height: 100vh;
   display: flex;
   justify-content: center;
-  background: linear-gradient
-    (180deg, ${(props) => props.one} 0%, ${(props) => props.two} 100%);
+  background: linear-gradient(
+    180deg,
+    ${(props) => props.one} 0%,
+    ${(props) => props.two} 100%
+  );
 `;
 
 const MobileFit = styled.div`
