@@ -29,6 +29,7 @@ const Question_title = styled.h1`
 `;
 
 const Question_description = styled.h3`
+  word-break: keep-all;
   text-align: center;
   width: 500px;
 `;
@@ -77,8 +78,8 @@ export default function Question({
                   add_count();
                 }}
                 height={
-                  dataList.filter((ele) => ele.id === curQuestion)[0].ansR
-                    .length > 20
+                  dataList.filter((ele) => ele.id === curQuestion)[0].ansL
+                    .length > 25
                     ? '60px'
                     : '40px'
                 }
@@ -92,7 +93,7 @@ export default function Question({
                 }}
                 height={
                   dataList.filter((ele) => ele.id === curQuestion)[0].ansR
-                    .length > 20
+                    .length > 25
                     ? '60px'
                     : '40px'
                 }

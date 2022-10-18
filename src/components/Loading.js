@@ -31,6 +31,7 @@ const bounce = keyframes`
 `;
 
 const Ment = styled.div`
+  font-family: 'BMJUA';
   transform: translate(0%, -35%);
   font-size: 32px;
   font-weight: 700;
