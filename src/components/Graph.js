@@ -58,7 +58,6 @@ const Line = styled.div`
 // ];
 
 const Graph = ({ BMTI }) => {
-  console.log(BMTI);
   return (
     <GraphContainer>
       <Graph_wrap>
