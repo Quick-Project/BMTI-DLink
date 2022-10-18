@@ -89,7 +89,12 @@ function App() {
             />
             <Route
               path="/ppak"
-              element={<PpakScreen cocktailType={cocktailType} />}
+              element={
+                <PpakScreen
+                  cocktailType={cocktailType}
+                  setCocktailType={setCocktailType}
+                />
+              }
             />
           </Routes>
         </MobileFit>

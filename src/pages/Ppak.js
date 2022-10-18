@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import SocialShare from '../components/SocialShare';
 import { ppakk } from '../assets/data/dummyData';
 
 //cocktailType
-const PpakScreen = ({ cocktailType }) => {
+const PpakScreen = ({ cocktailType, setCocktailType }) => {
   const ResultContain = styled.div`
     display: flex;
     flex-direction: column;
@@ -44,11 +45,11 @@ const PpakScreen = ({ cocktailType }) => {
     align-items: center;
   `;
 
-  const TrashContent = styled.div`
+  const ShareContents = styled.div`
     font-size: x-large;
     font-weight: bold;
-    margin: 50px;
-    color: blue;
+    color: black;
+    margin-top: 40px;
   `;
 
   const Test = styled.a`
@@ -81,7 +82,16 @@ const PpakScreen = ({ cocktailType }) => {
         <Test href="https://www.youtube.com/watch?v=exNk27QCrrs">
           백종원 모히또 만들어보기 →
         </Test>
-        <TrashContent>Share Tab</TrashContent>
+        <ShareContents>
+          <SocialShare
+            _title={'DEEP'}
+            _sub={'파우스트'}
+            _imageUrl={
+              'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
+            }
+            setCocktailType={setCocktailType}
+          />
+        </ShareContents>
       </ResultContain>
     </div>
   );
