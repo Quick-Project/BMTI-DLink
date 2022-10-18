@@ -10,6 +10,9 @@ const ResultContain = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  @media screen and (max-width: 500px) {
+    width: 90%;
+  }
 `;
 
 const ResultImg = styled.img`
@@ -104,6 +107,9 @@ const BmtiViewMore = styled.div`
 `;
 
 const ShareContents = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: x-large;
   font-weight: bold;
   color: black;
@@ -153,7 +159,6 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
     <ResultContain>
       <div>당신에게 추천할 칵테일은 바로</div>
       <h1>{`" ${filter[0].cocktail} "`}</h1>
-      {console.log(filter[0].cocktail)}
 
       <ResultImg src={filter[0].cocktailImg} />
 
@@ -200,7 +205,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
         <Comments>{filter[0].bmtiComment7}</Comments>
         <Comments>{filter[0].bmtiComment8}</Comments>
       </BmtiContents>
-      {/* -------------------------------이 아래는 또 다른 로직으로 접근해야할 거 같은데 모르겠군요------------------------------------------------- */}
+      {/* ———————————————이 아래는 또 다른 로직으로 접근해야할 거 같은데 모르겠군요———————————————————————— */}
       {/*  type = 'BMTI' type[0] B === showmodsflkj[0].type 'B' */}
       {/* cocktailType */}
       <BmtiViewMoreTitle>- 성향 해설 -</BmtiViewMoreTitle>

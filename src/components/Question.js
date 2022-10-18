@@ -31,7 +31,7 @@ const Question_title = styled.h1`
 const Question_description = styled.h3`
   word-break: keep-all;
   text-align: center;
-  width: 500px;
+  width: 85%;
 `;
 export default function Question({
   dataList,
@@ -54,72 +54,68 @@ export default function Question({
     navigate('/loading');
   }
   return (
-    <>
-      <Question_Container>
-        {bmtiPointer.length < 4 &&
-        !(bmtiPointer.length > 0 && bmtiPointer[0].type.includes('P')) ? (
-          <>
-            <ProgressBar width={(count / max) * 100 + '%'} />
-            <Question_wrap>
-              <Question_title>
-                {dataList.filter((ele) => ele.id === curQuestion)[0].title}
-              </Question_title>
-              <Question_description>
-                {dataList.filter((ele) => ele.id === curQuestion)[0].question}
-              </Question_description>
-            </Question_wrap>
+    <Question_Container>
+      {bmtiPointer.length < 4 &&
+      !(bmtiPointer.length > 0 && bmtiPointer[0].type.includes('P')) ? (
+        <>
+          <ProgressBar width={(count / max) * 100 + '%'} />
+          <Question_wrap>
+            <Question_title>
+              {dataList.filter((ele) => ele.id === curQuestion)[0].title}
+            </Question_title>
+            <Question_description>
+              {dataList.filter((ele) => ele.id === curQuestion)[0].question}
+            </Question_description>
+          </Question_wrap>
 
-            <Button_Container>
+          <Button_Container>
+            <Button
+              choice="L"
+              text={dataList.filter((ele) => ele.id === curQuestion)[0].ansL}
+              funcProps={(e) => {
+                buttonClick(e);
+                add_count();
+              }}
+              height={
+                dataList.filter((ele) => ele.id === curQuestion)[0].ansL
+                  .length > 25
+                  ? '60px'
+                  : '40px'
+              }
+            />
+            <Button
+              choice="R"
+              text={dataList.filter((ele) => ele.id === curQuestion)[0].ansR}
+              funcProps={(e) => {
+                buttonClick(e);
+                add_count();
+              }}
+              height={
+                dataList.filter((ele) => ele.id === curQuestion)[0].ansR
+                  .length > 25
+                  ? '60px'
+                  : '40px'
+              }
+            />
+            {dataList
+              .filter((ele) => ele.id === curQuestion)[0]
+              .hasOwnProperty('ansP') && (
               <Button
-                choice="L"
-                text={dataList.filter((ele) => ele.id === curQuestion)[0].ansL}
+                choice="P"
+                text={dataList.filter((ele) => ele.id === curQuestion)[0].ansP}
                 funcProps={(e) => {
                   buttonClick(e);
+                  setMax(3);
                   add_count();
                 }}
-                height={
-                  dataList.filter((ele) => ele.id === curQuestion)[0].ansL
-                    .length > 25
-                    ? '60px'
-                    : '40px'
-                }
               />
-              <Button
-                choice="R"
-                text={dataList.filter((ele) => ele.id === curQuestion)[0].ansR}
-                funcProps={(e) => {
-                  buttonClick(e);
-                  add_count();
-                }}
-                height={
-                  dataList.filter((ele) => ele.id === curQuestion)[0].ansR
-                    .length > 25
-                    ? '60px'
-                    : '40px'
-                }
-              />
-              {dataList
-                .filter((ele) => ele.id === curQuestion)[0]
-                .hasOwnProperty('ansP') && (
-                <Button
-                  choice="P"
-                  text={
-                    dataList.filter((ele) => ele.id === curQuestion)[0].ansP
-                  }
-                  funcProps={(e) => {
-                    buttonClick(e);
-                    setMax(3);
-                    add_count();
-                  }}
-                />
-              )}
-            </Button_Container>
-          </>
-        ) : (
-          goToLoading()
-        )}
-      </Question_Container>
-    </>
+            )}
+          </Button_Container>
+        </>
+      ) : (
+        goToLoading()
+      )}
+    </Question_Container>
   );
 }
 
