@@ -14,8 +14,9 @@ const StyledButton = styled.button`
   text-align: center;
   border: 0;
   outline: 0;
-  margin: 30px;
+  margin-bottom: 25px;
   font-weight: bold;
+
   :hover {
     background-color: #87c4ff;
   }
@@ -31,9 +32,6 @@ const Button = (props, funcProps, stateProps) => {
     <div>
       <StyledButton onClick={func} className={stateProps}>
         달달한 술이 좋아!
-      </StyledButton>
-      <StyledButton onClick={func} className={stateProps}>
-        술은 써야 술이지!
       </StyledButton>
     </div>
   );
