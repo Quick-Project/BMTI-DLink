@@ -14,12 +14,12 @@ const ShareBtn = styled.div`
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 `;
-
+// _title => 칵테일 // _sub => BMTI
 export default function Twitter({ _title, _sub }) {
   const twitterShareBtn = () => {
     window.open(
       'https://twitter.com/intent/tweet?text=' +
-        `저의 BMTI는 ${_title}이며, 어울리는 칵테일은 ${_sub}에요 당신에게 어울리는 칵테일도 찾아볼까요?` +
+        `저와 어울리는 칵테일은 ${_title}에요! 저의 BMTI ${_sub}에요! 당신의 BMTI는 무엇인지 궁금하지 않으신가요?? 같이 찾아봐요!` +
         '&url=' +
         process.env.REACT_APP_SHARE_URL
     );
