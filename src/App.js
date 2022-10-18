@@ -2,11 +2,15 @@ import React from 'react';
 import SocialShare from './components/SocialShare';
 import ProgressBar from './components/ProgressBar';
 import Graph from './components/Graph';
+import ResultScreen from './pages/ResultScreen';
+import Ppak from './pages/ppak';
 
 function App() {
   const hi = 'hi';
   return (
     <div>
+      {/* <Ppak /> */}
+      <ResultScreen />
       <span>
         {/* <SocialShare
           _title={'DEEP'}
