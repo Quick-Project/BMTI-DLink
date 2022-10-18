@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
+
 import QuestionScreen from './pages/QuestionScreen';
 import Home from './pages/Home';
+import ResultScreen from './pages/ResultScreen';
+import PpakScreen from './pages/Ppak';
+
 import Loading from './components/Loading';
 
 const WebPage = styled.article`
@@ -36,9 +40,15 @@ function App() {
     type: '',
     point: [],
   });
+
   const cockTailSetting = (cocktailResult) => {
     setCocktailType(cocktailResult);
   };
+
+  const MBTIdata = () => {
+    console.log('hi');
+  };
+
   return (
     <BrowserRouter>
       <WebPage one={one} two={two}>
@@ -58,11 +68,24 @@ function App() {
               path="/loading"
               element={<Loading cocktailType={cocktailType} />}
             />
+            <Route
+              path="/resultScreen"
+              element={
+                <ResultScreen
+                  MBTIdata={MBTIdata}
+                  cocktailType={cocktailType}
+                  setCocktailType={setCocktailType}
+                />
+              }
+            />
+            <Route
+              path="/ppak"
+              element={<PpakScreen cocktailType={cocktailType} />}
+            />
           </Routes>
         </MobileFit>
       </WebPage>
     </BrowserRouter>
   );
 }
-
 export default App;

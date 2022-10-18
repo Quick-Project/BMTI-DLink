@@ -53,7 +53,12 @@ const BtnContainer = styled.div`
   align-items: center;
 `;
 
-export default function SocialShare({ _title, _sub, _imageUrl }) {
+export default function SocialShare({
+  _title,
+  _sub,
+  _imageUrl,
+  setCocktailType,
+}) {
   const [copy, setCopy] = useState(false);
   const onClickCopy = () => {
     setCopy(true);
@@ -76,7 +81,16 @@ export default function SocialShare({ _title, _sub, _imageUrl }) {
         </BtnContainer>
         {copy && <Copy>주소가 복사되었습니다</Copy>}
         <Link to="/">
-          <Button text="한잔 더?" height="50px" />
+          <Button
+            text="한잔 더?"
+            height="50px"
+            funcProps={() => {
+              setCocktailType({
+                type: '',
+                point: [],
+              });
+            }}
+          />
         </Link>
       </ButtonContainerMain>
     </FlexContainer>
@@ -87,4 +101,5 @@ SocialShare.propTypes = {
   _title: PropTypes.string.isRequired,
   _sub: PropTypes.string.isRequired,
   _imageUrl: PropTypes.string.isRequired,
+  setCocktailType: PropTypes.func.isRequired,
 };

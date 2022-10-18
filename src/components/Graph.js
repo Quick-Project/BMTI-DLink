@@ -56,7 +56,8 @@ const BMTI = [
   { type: 'T', point: 2 },
 ];
 
-const Graph = () => {
+const Graph = ({ MBTI }) => {
+  console.log(MBTI);
   return (
     <GraphContainer>
       <Graph_wrap>
