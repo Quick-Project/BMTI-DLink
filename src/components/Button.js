@@ -14,7 +14,6 @@ const StyledButton = styled.button`
   text-align: center;
   border: 0;
   outline: 0;
-  margin-bottom: 25px;
   font-weight: bold;
   text-decoration: none;
   :hover {
