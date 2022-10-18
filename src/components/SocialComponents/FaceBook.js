@@ -19,8 +19,7 @@ export default function FaceBook() {
   const twitterShareBtn = () => {
     window.open(
       'http://www.facebook.com/sharer/sharer.php?u=' +
-        // process.env.REACT_APP_SHARE_URL
-        'http://naver.com'
+        process.env.REACT_APP_SHARE_URL
     );
   };
   return (

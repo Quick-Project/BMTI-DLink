@@ -5,14 +5,16 @@ import Kakao from './SocialComponents/Kakao';
 import LinkCopy from './SocialComponents/LinkCopy';
 import Twitter from './SocialComponents/Twitter';
 import PropTypes from 'prop-types';
-
+import Button from './Button';
+import { Link } from 'react-router-dom';
 const ButtonContainerMain = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1rem;
   background-color: #95d4e2;
-  padding: 0.5rem;
+  padding: 1rem;
+  width: 100%;
 `;
 
 const Copy = styled.div`
@@ -35,17 +37,20 @@ const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 800px;
-  height: 400px;
+
+  width: 600px;
+  height: 40vh;
+  @media screen and (max-width: 500px) {
+    width: 85%;
+  }
 `;
 
 // 버튼을 배치시키는 컨테이너
 const BtnContainer = styled.div`
   display: flex;
-  width: 400px;
-  justify-content: center;
+  width: 70%;
+  justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 2rem;
 `;
 
 export default function SocialShare({ _title, _sub, _imageUrl }) {
@@ -70,7 +75,9 @@ export default function SocialShare({ _title, _sub, _imageUrl }) {
           <LinkCopy onClick={onClickCopy} />
         </BtnContainer>
         {copy && <Copy>주소가 복사되었습니다</Copy>}
-        <button>승새가 만들어주는 이쁜버튼(처음으로 다시가기!)</button>
+        <Link to="/">
+          <Button text="한잔 더?" height="50px" />
+        </Link>
       </ButtonContainerMain>
     </FlexContainer>
   );
