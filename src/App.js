@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
-
+import QuestionScreen from './pages/QuestionScreen';
 import Home from './pages/Home';
-
+import Loading from './components/Loading';
 const WebPage = styled.article`
   width: 100vw;
   height: 100vh;
@@ -32,18 +32,38 @@ const MobileFit = styled.div`
 function App() {
   // 그라디언트 state
   const [one, setOne] = useState('white');
-  const [two, setTwo] = useState('#FAF6EE');
-
+  const [two, setTwo] = useState('skyblue');
+  const [cocktailType, setCocktailType] = useState({
+    type: '',
+    point: [],
+  });
+  const cockTailSetting = (cocktailResult) => {
+    setCocktailType(cocktailResult);
+  };
   return (
     <BrowserRouter>
       <WebPage one={one} two={two}>
         <MobileFit>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route
+              path="/question"
+              element={
+                <QuestionScreen
+                  cocktailType={cocktailType}
+                  cockTailSetting={cockTailSetting}
+                />
+              }
+            />
+            <Route
+              path="/loading"
+              element={<Loading cocktailType={cocktailType} />}
+            />
           </Routes>
         </MobileFit>
       </WebPage>
     </BrowserRouter>
   );
 }
+
 export default App;

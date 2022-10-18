@@ -14,7 +14,7 @@ const StyledButton = styled.button`
   text-align: center;
   border: 0;
   outline: 0;
-  margin: 30px;
+  margin-bottom: 25px;
   font-weight: bold;
   text-decoration: none;
   :hover {
@@ -22,9 +22,9 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ text, funcProps, height }) => {
+const Button = ({ choice, text, funcProps = function () {}, height }) => {
   return (
-    <StyledButton onClick={funcProps} height={height}>
+    <StyledButton id={choice} onClick={(e) => funcProps(e)} height={height}>
       {text}
     </StyledButton>
   );
