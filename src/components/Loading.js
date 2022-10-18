@@ -31,8 +31,9 @@ const bounce = keyframes`
 
 const Ment = styled.div`
   transform: translate(0%, -35%);
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 700;
+  text-align: center;
   position: relative;
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
     0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
