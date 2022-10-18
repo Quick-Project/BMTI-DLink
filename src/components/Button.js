@@ -7,7 +7,7 @@ const StyledButton = styled.button`
   justify-content: center;
   background-color: #449ff7;
   width: 310px;
-  height: 40px;
+  height: ${(props) => props.height || '40px'};
   color: white;
   border-radius: 15px;
   font-size: 16px;
@@ -16,24 +16,17 @@ const StyledButton = styled.button`
   outline: 0;
   margin-bottom: 25px;
   font-weight: bold;
-
+  text-decoration: none;
   :hover {
     background-color: #87c4ff;
   }
-  .stateProps {
-    height: 80px;
-  }
 `;
 
-const Button = (props, funcProps, stateProps) => {
-  const func = () => {};
-
+const Button = ({ text, funcProps, height }) => {
   return (
-    <div>
-      <StyledButton onClick={func} className={stateProps}>
-        달달한 술이 좋아!
-      </StyledButton>
-    </div>
+    <StyledButton onClick={funcProps} height={height}>
+      {text}
+    </StyledButton>
   );
 };
 
