@@ -66,8 +66,7 @@ const Graph = () => {
           borderColor="#AEBAFF"
         >
           <span>
-            {' '}
-            <strong> {BMTI[0].type} </strong>{' '}
+            <strong> {BMTI[0].type} </strong>
           </span>
           <span> {BMTI[0].point} </span>
         </Bar>
@@ -77,8 +76,7 @@ const Graph = () => {
           borderColor="#FF84B8"
         >
           <span>
-            {' '}
-            <strong> {BMTI[1].type} </strong>{' '}
+            <strong> {BMTI[1].type} </strong>
           </span>
           <span> {BMTI[1].point} </span>
         </Bar>
@@ -88,8 +86,7 @@ const Graph = () => {
           borderColor="#CA7FFE"
         >
           <span>
-            {' '}
-            <strong> {BMTI[2].type} </strong>{' '}
+            <strong> {BMTI[2].type} </strong>
           </span>
           <span> {BMTI[2].point} </span>
         </Bar>
@@ -99,8 +96,7 @@ const Graph = () => {
           borderColor="#DACAD9"
         >
           <span>
-            {' '}
-            <strong> {BMTI[3].type} </strong>{' '}
+            <strong> {BMTI[3].type} </strong>
           </span>
           <span> {BMTI[3].point} </span>
         </Bar>
