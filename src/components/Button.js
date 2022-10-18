@@ -17,6 +17,7 @@ const StyledButton = styled.button`
   margin: 30px;
   font-weight: bold;
   text-decoration: none;
+
   :hover {
     background-color: #87c4ff;
   }
