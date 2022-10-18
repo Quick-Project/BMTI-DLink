@@ -54,6 +54,7 @@ const HilightBmtiContain = styled.div`
   text-align: center;
   justify-content: center;
   align-items: baseline;
+  margin: 10px 0 50px 0;
 `;
 
 const HilightBmitComments = styled.div`
@@ -91,6 +92,7 @@ const BmtiContents = styled.div`
 const BmtiViewMoreTitle = styled.div`
   margin: 30px 0 10px 0;
   font-size: x-large;
+  font-weight: bold;
 `;
 
 const BmtiViewMore = styled.div`
@@ -182,13 +184,12 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
       <BmtiTitle>
         <BmtiTitleContents>
           <HilightComments>
-            {`${filter[0].bmtiComment1}의 성향을 가진 당신!`}
+            {`${filter[0].bmtiComment1}의 성향을 가진 당신의 칵테일!`}
           </HilightComments>
-          <div>{`그리고`}</div>
         </BmtiTitleContents>
         <BmtiTitleContents>
-          <HilightComments>{`" ${filter[0].bmtiComment2} "`}</HilightComments>
-          <Comments>{filter[0].bmtiComment3}은?</Comments>
+          <HilightComments>{` ${filter[0].bmtiComment2} `}</HilightComments>
+          <Comments>{filter[0].bmtiComment3}</Comments>
         </BmtiTitleContents>
       </BmtiTitle>
 
@@ -204,7 +205,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
       {/* -------------------------------이 아래는 또 다른 로직으로 접근해야할 거 같은데 모르겠군요------------------------------------------------- */}
       {/*  type = 'BMTI' type[0] B === showmodsflkj[0].type 'B' */}
       {/* cocktailType */}
-      <BmtiViewMoreTitle>성향 해설</BmtiViewMoreTitle>
+      <BmtiViewMoreTitle>- 성향 해설 -</BmtiViewMoreTitle>
       <BmtiViewMore>
         <Comments>
           {bmtiDetail[0].type}({bmtiDetail[0].fullType}) :{' '}
