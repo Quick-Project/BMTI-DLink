@@ -14,15 +14,13 @@ const WebPage = styled.article`
     ${(props) => props.one} 0%,
     ${(props) => props.two} 100%
   );
+  overflow: auto;
 `;
 
 const MobileFit = styled.div`
   display: flex;
   justify-content: center;
   width: 50%;
-
-  //차후 지울 보더
-  border: 1px solid red;
 
   @media (max-width: 800px) {
     width: 100%;
