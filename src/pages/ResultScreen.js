@@ -148,7 +148,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
   const bmtiDetail = showMoreBmti.filter((x) =>
     cocktailType.type.includes(x.type)
   );
-
+  console.log(filter);
   return (
     <ResultContain>
       <div>당신에게 추천할 칵테일은 바로</div>
@@ -172,11 +172,9 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
 
       <ShareContents>
         <SocialShare
-          _title={'DEEP'}
-          _sub={'파우스트'}
-          _imageUrl={
-            'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
-          }
+          _title={filter[0].cocktail}
+          _sub={`[ ${filter[0].type} ]`}
+          _imageUrl={filter[0].cocktailImg}
           setCocktailType={setCocktailType}
         />
       </ShareContents>
@@ -227,11 +225,9 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
       <br />
       <ShareContents>
         <SocialShare
-          _title={'DEEP'}
-          _sub={'파우스트'}
-          _imageUrl={
-            'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
-          }
+          _title={filter[0].cocktail}
+          _sub={`[ ${filter[0].type} ]`}
+          _imageUrl={filter[0].cocktailImg}
           setCocktailType={setCocktailType}
         />
       </ShareContents>
