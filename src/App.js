@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Home from './pages/Home';
+import ResultScreen from './pages/ResultScreen';
 
 const WebPage = styled.article`
   width: 100vw;
@@ -24,8 +25,9 @@ const MobileFit = styled.div`
   //차후 지울 보더
   border: 1px solid red;
 
-  @media (max-width: 800px) {
-    width: 100%;
+  @media (max-width: 900px) {
+    width: 100vw;
+    height: 100vh;
   }
 `;
 
@@ -40,6 +42,7 @@ function App() {
         <MobileFit>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/ResultScreen" element={<ResultScreen />} />
           </Routes>
         </MobileFit>
       </WebPage>
