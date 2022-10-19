@@ -78,9 +78,9 @@ export default function Question({
               }}
               height={
                 dataList.filter((ele) => ele.id === curQuestion)[0].ansL
-                  .length > 25
-                  ? '60px'
-                  : '40px'
+                  .length > 24
+                  ? '70px'
+                  : '50px'
               }
             />
             <Button
@@ -92,9 +92,9 @@ export default function Question({
               }}
               height={
                 dataList.filter((ele) => ele.id === curQuestion)[0].ansR
-                  .length > 25
-                  ? '60px'
-                  : '40px'
+                  .length > 24
+                  ? '70px'
+                  : '50px'
               }
             />
             {dataList

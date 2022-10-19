@@ -34,8 +34,8 @@ const MobileFit = styled.div`
 
 function App() {
   // 그라디언트 state
-  const [one, setOne] = useState('white');
-  const [two, setTwo] = useState('skyblue');
+  const [one, setOne] = useState('#FFFFFF');
+  const [two, setTwo] = useState('#87CEEB');
   const [cocktailType, setCocktailType] = useState({
     type: '',
     point: [],
