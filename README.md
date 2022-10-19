@@ -44,6 +44,7 @@ Jaehong Seo(피터)</b></sub></a><br /><a href="https://github.com/Quick-Project
 <br/>
 
 ©Copyright Team DLink
+<br/>
 이미지 소스 제공 - [헬리](https://github.com/haileyport)
 
 <br/>
