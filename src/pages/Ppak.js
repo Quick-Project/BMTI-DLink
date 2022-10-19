@@ -86,8 +86,11 @@ const PpakScreen = ({ cocktailType, setCocktailType }) => {
           <SocialShare
             _title={ppakk[0].cocktail}
             _sub={'[PPAK]'}
-            _imageUrl={ppakk[0].cocktailImg}
+            _imageUrl={
+              'https://user-images.githubusercontent.com/104412610/196675557-87da6d3d-9fdd-413e-8d24-062758f679ab.png'
+            }
             setCocktailType={setCocktailType}
+            _url={window.location.href.slice(0, -4)}
           />
         </ShareContents>
       </ResultContain>

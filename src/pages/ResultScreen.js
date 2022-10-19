@@ -154,6 +154,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
   const bmtiDetail = showMoreBmti.filter((x) =>
     cocktailType.type.includes(x.type)
   );
+  const screenUrl = window.location.href.slice(0, -4);
 
   return (
     <ResultContain>
@@ -181,6 +182,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
           _sub={`[ ${filter[0].type} ]`}
           _imageUrl={filter[0].cocktailImg}
           setCocktailType={setCocktailType}
+          _url={window.location.href.slice(0, -12)}
         />
       </ShareContents>
 
@@ -234,6 +236,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
           _sub={`[ ${filter[0].type} ]`}
           _imageUrl={filter[0].cocktailImg}
           setCocktailType={setCocktailType}
+          _url={window.location.href.slice(0, -12)}
         />
       </ShareContents>
     </ResultContain>

@@ -15,12 +15,9 @@ const ShareBtn = styled.div`
   margin-right: 0.5rem;
 `;
 
-export default function FaceBook() {
+export default function FaceBook({ _url }) {
   const twitterShareBtn = () => {
-    window.open(
-      'http://www.facebook.com/sharer/sharer.php?u=' +
-        process.env.REACT_APP_SHARE_URL
-    );
+    window.open('http://www.facebook.com/sharer/sharer.php?u=' + _url);
   };
   return (
     <ShareBtn onClick={twitterShareBtn}>
