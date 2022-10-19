@@ -21,7 +21,7 @@ const KakaoImg = styled.img`
 `;
 
 // _title : 칵테일,_sub : BMTI
-export default function Kakao({ _title, _sub, _imageUrl }) {
+export default function Kakao({ _title, _sub, _imageUrl, _url }) {
   useEffect(() => {
     // 카카오톡 sdk 추가
     const script = document.createElement('script');
@@ -50,16 +50,16 @@ export default function Kakao({ _title, _sub, _imageUrl }) {
             \n 당신의 BMTI는 무엇인지 궁금하지 않으신가요? 같이 찾아봐요`,
           imageUrl: `${_imageUrl}`,
           link: {
-            mobileWebUrl: 'process.env.REACT_APP_SHARE_URL',
-            webUrl: 'process.env.REACT_APP_SHARE_URL',
+            mobileWebUrl: _url,
+            webUrl: _url,
           },
         },
         buttons: [
           {
             title: '인생 칵테일 찾기',
             link: {
-              webUrl: process.env.REACT_APP_SHARE_URL,
-              mobileWebUrl: process.env.REACT_APP_SHARE_URL,
+              webUrl: _url,
+              mobileWebUrl: _url,
             },
           },
         ],

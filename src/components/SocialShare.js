@@ -12,11 +12,17 @@ const ButtonContainerMain = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-radius: 1rem;
   background-color: #95d4e2;
   padding: 1rem;
-  width: 100%;
-  height: 200px;
+  width: 90%;
+  height: 150px;
+`;
+
+const Title = styled.h3`
+  word-break: keep-all;
+  text-align: center;
 `;
 
 const Copy = styled.div`
@@ -40,7 +46,7 @@ const FlexContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 600px;
+  width: 90%;
   height: calc(var(--vh, 1vh) * 40);
   @media screen and (max-width: 600px) {
     width: 85%;
@@ -50,7 +56,7 @@ const FlexContainer = styled.div`
 // 버튼을 배치시키는 컨테이너
 const BtnContainer = styled.div`
   display: flex;
-  width: 70%;
+  width: 100%;
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 2rem;
@@ -62,6 +68,7 @@ export default function SocialShare({
   _sub,
   _imageUrl,
   setCocktailType,
+  _url,
 }) {
   // const [copy, setCopy] = useState(false);
   const onClickCopy = () => {
@@ -74,14 +81,19 @@ export default function SocialShare({
 
   return (
     <FlexContainer>
-      <h3>👍 친구에게 결과 공유하기</h3>
+      <Title>👍 친구에게 결과 공유하기</Title>
       <ButtonContainerMain>
         <BtnContainer>
           {/* _title -> 칵테일 // _sub -> BMTI // imagrUrl => 결과 관련 이미지 _sub => */}
-          <Kakao _title={_title} _sub={_sub} _imageUrl={_imageUrl} />
-          <Twitter _title={_title} _sub={_sub} />
-          <FaceBook />
-          <LinkCopy onClick={onClickCopy} />
+          <Kakao
+            _title={_title}
+            _sub={_sub}
+            _imageUrl={_imageUrl}
+            _url={_url}
+          />
+          <Twitter _title={_title} _sub={_sub} _url={_url} />
+          <FaceBook _url={_url} />
+          <LinkCopy onClick={onClickCopy} _url={_url} />
         </BtnContainer>
         {/* {copy && <Copy>주소가 복사되었습니다</Copy>} */}
 

@@ -16,12 +16,10 @@ const ShareBtn = styled.div`
   margin-right: 0.5rem;
 `;
 
-export default function LinkCopy({ onClick }) {
-  const link = process.env.REACT_APP_SHARE_URL;
-
+export default function LinkCopy({ onClick, _url }) {
   return (
     <ShareBtn onClick={onClick}>
-      <CopyToClipboard text={link}>
+      <CopyToClipboard text={_url}>
         <BiLink style={{ width: '32px', height: '32px' }} />
       </CopyToClipboard>
     </ShareBtn>

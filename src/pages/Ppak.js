@@ -86,12 +86,13 @@ const PpakScreen = ({ cocktailType, setCocktailType }) => {
         </Test>
         <ShareContents>
           <SocialShare
-            _title={'DEEP'}
-            _sub={'파우스트'}
+            _title={ppakk[0].cocktail}
+            _sub={'[PPAK]'}
             _imageUrl={
-              'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
+              'https://user-images.githubusercontent.com/104412610/196675557-87da6d3d-9fdd-413e-8d24-062758f679ab.png'
             }
             setCocktailType={setCocktailType}
+            _url={window.location.href.slice(0, -4)}
           />
         </ShareContents>
       </ResultContain>
