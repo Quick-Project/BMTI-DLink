@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/BMTI-DLink/static/css/main.653f3565.css",
-    "main.js": "/BMTI-DLink/static/js/main.b374403e.js",
+    "main.js": "/BMTI-DLink/static/js/main.7f4c95ff.js",
     "static/media/home.png": "/BMTI-DLink/static/media/home.38db95eb0a9c4ba4510a.png",
     "index.html": "/BMTI-DLink/index.html",
     "main.653f3565.css.map": "/BMTI-DLink/static/css/main.653f3565.css.map",
-    "main.b374403e.js.map": "/BMTI-DLink/static/js/main.b374403e.js.map"
+    "main.7f4c95ff.js.map": "/BMTI-DLink/static/js/main.7f4c95ff.js.map"
   },
   "entrypoints": [
     "static/css/main.653f3565.css",
-    "static/js/main.b374403e.js"
+    "static/js/main.7f4c95ff.js"
   ]
 }
