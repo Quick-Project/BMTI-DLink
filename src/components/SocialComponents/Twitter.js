@@ -21,7 +21,7 @@ export default function Twitter({ _title, _sub, _url }) {
       'https://twitter.com/intent/tweet?text=' +
         `저와 어울리는 칵테일은 ${_title}에요! 저의 BMTI ${_sub}에요! 당신의 BMTI는 무엇인지 궁금하지 않으신가요?? 같이 찾아봐요!` +
         '&url=' +
-        _url
+        `${_url}`
     );
   };
   return (

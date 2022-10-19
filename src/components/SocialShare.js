@@ -16,7 +16,7 @@ const ButtonContainerMain = styled.div`
   border-radius: 1rem;
   background-color: #95d4e2;
   padding: 1rem;
-  width: 90%;
+  width: 85%;
   height: 150px;
 `;
 
@@ -46,11 +46,8 @@ const FlexContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 90%;
+  width: 100%;
   height: calc(var(--vh, 1vh) * 40);
-  @media screen and (max-width: 600px) {
-    width: 85%;
-  }
 `;
 
 // 버튼을 배치시키는 컨테이너

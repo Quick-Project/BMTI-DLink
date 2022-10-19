@@ -92,7 +92,7 @@ const PpakScreen = ({ cocktailType, setCocktailType }) => {
               'https://user-images.githubusercontent.com/104412610/196675557-87da6d3d-9fdd-413e-8d24-062758f679ab.png'
             }
             setCocktailType={setCocktailType}
-            _url={window.location.href.slice(0, -4)}
+            _url={process.env.REACT_APP_SHARE_URL}
           />
         </ShareContents>
       </ResultContain>
