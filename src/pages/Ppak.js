@@ -92,7 +92,7 @@ const PpakScreen = ({ cocktailType, setCocktailType }) => {
               'https://user-images.githubusercontent.com/104412610/196675557-87da6d3d-9fdd-413e-8d24-062758f679ab.png'
             }
             setCocktailType={setCocktailType}
-            _url={'https://quick-project.github.io' + process.env.PUBLIC_URL}
+            _url={`https://quick-project.github.io${process.env.PUBLIC_URL}`}
           />
         </ShareContents>
       </ResultContain>
