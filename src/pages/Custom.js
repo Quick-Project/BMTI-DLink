@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import ColorButton from '../components/ColorButton';
 
 import Hand from './../assets/img/customCocktail/handler.png';
 import Ice from './../assets/img/customCocktail/decoration/ice_noline.png';
@@ -91,8 +92,59 @@ const Decoration = styled.div`
   position: absolute;
 `;
 
+const Custom_wrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+const PatternButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 15px;
+  background-color: white;
+  font-weight: bold;
+  /* background-color: blue; */
+  border: 2px solid pink;
+  border-radius: 10px;
+  color: pink;
+  cursor: pointer;
+  padding: 10px;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  :hover {
+    color: white;
+    background-color: pink;
+    border: 2px solid white;
+    text-shadow: 0 0 3px pink;
+    -webkit-box-shadow: pink 0 0 3px, inset pink 0 0 3px;
+    box-shadow: red 0 0 3px, inset pink 0 0 3px;
+  }
+`;
+
+const Btn_wrap = styled.div`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: end;
+  margin-top: 650px;
+`;
+
 const Custom = () => {
-  const color = ['#FDA749', '#C51C0E', '#3E1210'];
+  const [pickColor, setPickColor] = useState(['pink']);
+  const [pattern, setPattern] = useState([]);
+
+  console.log(pickColor);
+  const patternList = ['mono', 'gradient', 'layer'];
+  const color = [pickColor[0], 'red', 'blue'];
+
   const makeGradient = (colors) => {
     return colors
       .map((color, index) => {
@@ -102,28 +154,59 @@ const Custom = () => {
   };
 
   return (
-    <Glass>
-      <Head />
-      <HeadCup>
-        <Overlay />
-        <Decoration>
-          <img src={Ice} alt="ice" />
-        </Decoration>
-        {/* <OneColor color={color[0]} /> */}
-        {/* {color.map((el, idx) => {
-          return (
-            <Layer
+    <>
+      <Custom_wrap>
+        <Glass>
+          <Head />
+          <HeadCup>
+            <Overlay />
+            <Decoration>
+              <img src={Ice} alt="ice" />
+            </Decoration>
+            {/* <OneColor color={color[0]} /> */}
+            {/* {color.map((el, idx) => {
+            return (
+              <Layer
               key={el}
               color={el}
               length={color.length}
               className={idx === color.length - 1 ? 'bottomCup' : null}
+              />
+              );
+            })} */}
+            <Gradient
+              length={color.length}
+              colorHex={() => makeGradient(color)}
             />
-          );
-        })} */}
-        <Gradient length={color.length} colorHex={() => makeGradient(color)} />
-      </HeadCup>
-      <Handler src={Hand} alt="손잡이" width="150px" height="200px" />
-    </Glass>
+          </HeadCup>
+          <Handler src={Hand} alt="손잡이" width="150px" height="200px" />
+        </Glass>
+        <ColorButton pickColor={pickColor} setPickColor={setPickColor} />
+        <Btn_wrap>
+          <PatternButton
+            onClick={() => {
+              setPattern(patternList[0]);
+            }}
+          >
+            {patternList[0]}
+          </PatternButton>
+          <PatternButton
+            onClick={() => {
+              setPattern(patternList[1]);
+            }}
+          >
+            {patternList[1]}
+          </PatternButton>
+          <PatternButton
+            onClick={() => {
+              setPattern(patternList[2]);
+            }}
+          >
+            {patternList[2]}
+          </PatternButton>
+        </Btn_wrap>
+      </Custom_wrap>
+    </>
   );
 };
 
