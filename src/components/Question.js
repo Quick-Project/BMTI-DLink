@@ -10,7 +10,7 @@ const Question_Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   position: relative;
-  height: 30vh;
+  height: calc(var(--vh, 1vh) * 30);
 `;
 
 const Question_wrap = styled.div`

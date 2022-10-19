@@ -10,7 +10,7 @@ const Background = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   background-color: rgb(253, 240, 234);
 `;
 

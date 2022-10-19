@@ -41,7 +41,7 @@ const FlexContainer = styled.div`
   align-items: center;
 
   width: 600px;
-  height: 40vh;
+  height: calc(var(--vh, 1vh) * 40);
   @media screen and (max-width: 600px) {
     width: 85%;
   }
