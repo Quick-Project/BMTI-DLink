@@ -42,6 +42,8 @@ Jaehong Seo(피터)</b></sub></a><br /><a href="https://github.com/Quick-Project
 | 22.10.19 | 19:00 ~ 00:30 |
 
 <br/>
+## Figma 주소
+https://www.figma.com/file/eW6h99iC92BZNO4X2HLfGj/BMTI-UI?node-id=0%3A1
 
 ©Copyright Team DLink
 <br/>
