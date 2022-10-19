@@ -186,7 +186,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
           _sub={`[ ${filter[0].type} ]`}
           _imageUrl={filter[0].cocktailImg}
           setCocktailType={setCocktailType}
-          _url={process.env.REACT_APP_SHARE_URL}
+          _url={process.env.PUBLIC_URL}
         />
       </ShareContents>
 
@@ -240,7 +240,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
           _sub={`[ ${filter[0].type} ]`}
           _imageUrl={filter[0].cocktailImg}
           setCocktailType={setCocktailType}
-          _url={process.env.REACT_APP_SHARE_URL}
+          _url={process.env.PUBLIC_URL}
         />
       </ShareContents>
     </ResultContain>
