@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import FaceBook from './SocialComponents/FaceBook';
-import Kakao from './SocialComponents/Kakao';
+// import Kakao from './SocialComponents/Kakao';
 import LinkCopy from './SocialComponents/LinkCopy';
 import Twitter from './SocialComponents/Twitter';
 import PropTypes from 'prop-types';
@@ -82,12 +82,12 @@ export default function SocialShare({
       <ButtonContainerMain>
         <BtnContainer>
           {/* _title -> 칵테일 // _sub -> BMTI // imagrUrl => 결과 관련 이미지 _sub => */}
-          <Kakao
+          {/* <Kakao
             _title={_title}
             _sub={_sub}
             _imageUrl={_imageUrl}
             // _url={_url}
-          />
+          /> */}
           <Twitter _title={_title} _sub={_sub} _url={_url} />
           <FaceBook _url={_url} />
           <LinkCopy onClick={onClickCopy} _url={_url} />
