@@ -10,7 +10,7 @@ const Background = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   background-color: rgb(253, 240, 234);
 `;
 
@@ -60,17 +60,26 @@ const Loading = ({ cocktailType }) => {
   useEffect(() => {
     setTimeout(() => {
       setText('칵테일이 만들어졌어요!');
+    }, 3000);
+
+    // 텍스트 변하는게 안 보여서 떼어냈습니다
+    setTimeout(() => {
       if (cocktailType.point.length > 1) {
         navigate('/resultScreen');
       } else {
         navigate('/ppak');
       }
-    }, 3000);
+    }, 4000);
   });
 
   return (
     <Background>
-      <Lottie options={defaultOptions} width="400px" height="400px"></Lottie>
+      <Lottie
+        isClickToPauseDisabled={true}
+        options={defaultOptions}
+        width="400px"
+        height="400px"
+      ></Lottie>
       <Ment>{text}</Ment>
     </Background>
   );
