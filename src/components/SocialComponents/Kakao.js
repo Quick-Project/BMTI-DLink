@@ -21,7 +21,8 @@ const KakaoImg = styled.img`
 `;
 
 // _title : 칵테일,_sub : BMTI
-export default function Kakao({ _title, _sub, _imageUrl, _url }) {
+export default function Kakao({ _title, _sub, _imageUrl }) {
+  const _url = 'https://quick-project.github.io';
   useEffect(() => {
     // 카카오톡 sdk 추가
     const script = document.createElement('script');

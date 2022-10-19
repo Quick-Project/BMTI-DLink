@@ -86,7 +86,7 @@ export default function SocialShare({
             _title={_title}
             _sub={_sub}
             _imageUrl={_imageUrl}
-            _url={_url}
+            // _url={_url}
           />
           <Twitter _title={_title} _sub={_sub} _url={_url} />
           <FaceBook _url={_url} />
