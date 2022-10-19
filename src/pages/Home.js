@@ -18,6 +18,7 @@ const Title = styled.div`
   font-size: 33px;
   font-weight: 700;
   text-align: center;
+  word-break: keep-all;
   @media (max-width: 800px) {
     margin: 5% 20%;
   }
