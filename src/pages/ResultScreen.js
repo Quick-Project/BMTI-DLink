@@ -31,17 +31,19 @@ const TitleCocktail = styled.div`
 `;
 
 const BmtiImg = styled.img`
-  width: 220px;
-  height: 220px;
+  width: 300px;
+  height: auto;
   margin: 20px;
 `;
 
 const Comments = styled.div`
+  word-break: keep-all;
   color: black;
   margin: 5px;
 `;
 
 const CocktailComments = styled.div`
+  word-break: keep-all;
   font-size: auto;
   color: black;
   margin: 5px;
@@ -71,12 +73,15 @@ const BmtiTitle = styled.div`
   justify-content: flex-start;
   text-align: start;
   align-items: flex-start;
+  margin-top: 50px;
 `;
 
 const BmtiTitleContents = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: start;
+  align-items: flex-start;
+  text-align: start;
 `;
 
 const HilightComments = styled.div`
@@ -89,7 +94,7 @@ const BmtiContents = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
-  text-align: center;
+  text-align: start;
 `;
 
 const BmtiViewMoreTitle = styled.div`
@@ -159,6 +164,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
     <ResultContain>
       <div>당신에게 추천할 칵테일은 바로</div>
       <h1>{`" ${filter[0].cocktail} "`}</h1>
+      {console.log(filter[0].cocktail)}
 
       <ResultImg src={filter[0].cocktailImg} />
 
@@ -177,9 +183,11 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
 
       <ShareContents>
         <SocialShare
-          _title={filter[0].cocktail}
-          _sub={`[ ${filter[0].type} ]`}
-          _imageUrl={filter[0].cocktailImg}
+          _title={'DEEP'}
+          _sub={'파우스트'}
+          _imageUrl={
+            'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
+          }
           setCocktailType={setCocktailType}
         />
       </ShareContents>
@@ -205,7 +213,7 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
         <Comments>{filter[0].bmtiComment7}</Comments>
         <Comments>{filter[0].bmtiComment8}</Comments>
       </BmtiContents>
-      {/* ———————————————이 아래는 또 다른 로직으로 접근해야할 거 같은데 모르겠군요———————————————————————— */}
+      {/* -------------------------------이 아래는 또 다른 로직으로 접근해야할 거 같은데 모르겠군요------------------------------------------------- */}
       {/*  type = 'BMTI' type[0] B === showmodsflkj[0].type 'B' */}
       {/* cocktailType */}
       <BmtiViewMoreTitle>- 성향 해설 -</BmtiViewMoreTitle>
@@ -230,9 +238,11 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
       <br />
       <ShareContents>
         <SocialShare
-          _title={filter[0].cocktail}
-          _sub={`[ ${filter[0].type} ]`}
-          _imageUrl={filter[0].cocktailImg}
+          _title={'DEEP'}
+          _sub={'파우스트'}
+          _imageUrl={
+            'https://cloud-mustang-79a.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0496b621-8066-4bf1-bfea-59133e7b706d%2FUntitled.png?table=block&id=05212b9f-aaaf-41bb-9679-32f863f0b01c&width=2000&userId=&cache=v2'
+          }
           setCocktailType={setCocktailType}
         />
       </ShareContents>
