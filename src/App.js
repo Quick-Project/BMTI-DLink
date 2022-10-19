@@ -17,6 +17,7 @@ function setScreenSize() {
   document.documentElement.style.setProperty('--wh', `${wh}px`);
 }
 
+window.addEventListener('resize', () => setScreenSize());
 setScreenSize();
 
 const WebPage = styled.article`
