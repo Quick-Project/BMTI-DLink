@@ -46,8 +46,11 @@ const FlexContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  width: 100%;
-  height: 40vh;
+  width: 90%;
+  height: calc(var(--vh, 1vh) * 40);
+  @media screen and (max-width: 600px) {
+    width: 85%;
+  }
 `;
 
 // 버튼을 배치시키는 컨테이너

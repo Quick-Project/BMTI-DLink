@@ -9,9 +9,20 @@ import PpakScreen from './pages/Ppak';
 
 import Loading from './components/Loading';
 
+function setScreenSize() {
+  let vh = window.innerHeight * 0.01;
+  let wh = window.innerWidth * 0.01;
+
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  document.documentElement.style.setProperty('--wh', `${wh}px`);
+}
+
+window.addEventListener('resize', () => setScreenSize());
+setScreenSize();
+
 const WebPage = styled.article`
   width: 100vw;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   justify-content: center;
   background: linear-gradient(
@@ -34,8 +45,8 @@ const MobileFit = styled.div`
 
 function App() {
   // 그라디언트 state
-  const [one, setOne] = useState('white');
-  const [two, setTwo] = useState('skyblue');
+  const [one, setOne] = useState('#FFFFFF');
+  const [two, setTwo] = useState('#87CEEB');
   const [cocktailType, setCocktailType] = useState({
     type: '',
     point: [],

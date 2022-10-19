@@ -201,7 +201,7 @@ export const dataList = [
     {
       id: 'i',
       title: '질문 7',
-      question: '당신의 옷장은 어떤 가요?!',
+      question: '당신의 옷장은 어떤가요?!',
       ansL: '다양한 색의 옷이 존재한다!',
       ansR: 'Simple is Best!',
     },

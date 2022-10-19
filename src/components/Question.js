@@ -10,7 +10,7 @@ const Question_Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   position: relative;
-  height: 30vh;
+  height: calc(var(--vh, 1vh) * 30);
 `;
 
 const Question_wrap = styled.div`
@@ -78,9 +78,9 @@ export default function Question({
               }}
               height={
                 dataList.filter((ele) => ele.id === curQuestion)[0].ansL
-                  .length > 25
-                  ? '60px'
-                  : '40px'
+                  .length > 24
+                  ? '70px'
+                  : '50px'
               }
             />
             <Button
@@ -92,9 +92,9 @@ export default function Question({
               }}
               height={
                 dataList.filter((ele) => ele.id === curQuestion)[0].ansR
-                  .length > 25
-                  ? '60px'
-                  : '40px'
+                  .length > 24
+                  ? '70px'
+                  : '50px'
               }
             />
             {dataList

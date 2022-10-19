@@ -18,7 +18,7 @@ const PpakScreen = ({ cocktailType, setCocktailType }) => {
   `;
 
   const ResultImg = styled.img`
-    width: 270px;
+    width: 300px;
     height: auto;
     margin-bottom: 10px;
     margin-left: 90px;
@@ -50,6 +50,8 @@ const PpakScreen = ({ cocktailType, setCocktailType }) => {
     font-weight: bold;
     color: black;
     margin-top: 40px;
+    display: flex;
+    justify-content: center;
   `;
 
   const Test = styled.a`
