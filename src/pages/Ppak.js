@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import SocialShare from '../components/SocialShare';
 import { ppakk } from '../assets/data/dummyData';
-
+import { useNavigate } from 'react-router-dom';
 //cocktailType
 const PpakScreen = ({ cocktailType, setCocktailType }) => {
   const ResultContain = styled.div`
@@ -66,6 +66,13 @@ const PpakScreen = ({ cocktailType, setCocktailType }) => {
       color: blue;
     }
   `;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (cocktailType.type === '') {
+      navigate('/');
+    }
+  });
 
   return (
     <div>

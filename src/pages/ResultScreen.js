@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { cocktailData, dataList, showMoreBmti } from '../assets/data/dummyData';
 import SocialShare from '../components/SocialShare';
 import Graph from '../components/Graph';
-
+import { useNavigate } from 'react-router-dom';
 const ResultContain = styled.div`
   position: relative;
   display: flex;
@@ -159,90 +159,101 @@ const ResultScreen = ({ cocktailType, BMTIdata, setCocktailType }) => {
   const bmtiDetail = showMoreBmti.filter((x) =>
     cocktailType.type.includes(x.type)
   );
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (cocktailType.type === '') {
+      navigate('/');
+    }
+  });
 
   return (
     <ResultContain>
-      <div>당신에게 추천할 칵테일은 바로</div>
-      <h1>{`" ${filter[0].cocktail} "`}</h1>
+      {cocktailType.type && (
+        <>
+          <div>당신에게 추천할 칵테일은 바로</div>
+          <h1>{`" ${filter[0].cocktail} "`}</h1>
 
-      <ResultImg src={filter[0].cocktailImg} />
+          <ResultImg src={filter[0].cocktailImg} />
 
-      <TitleCocktail>
-        <CocktailComments>• {filter[0].comment1}</CocktailComments>
-        <CocktailComments>• {filter[0].comment2}</CocktailComments>
-        <CocktailComments>• {filter[0].comment3}</CocktailComments>
-      </TitleCocktail>
+          <TitleCocktail>
+            <CocktailComments>• {filter[0].comment1}</CocktailComments>
+            <CocktailComments>• {filter[0].comment2}</CocktailComments>
+            <CocktailComments>• {filter[0].comment3}</CocktailComments>
+          </TitleCocktail>
 
-      <MidBmtiComments>당신의 BMTI 성향은?</MidBmtiComments>
-      <HilightBmtiContain>
-        <HilightBmitComments>[ {filter[0].type} ]</HilightBmitComments>
-        <Comments>입니다!</Comments>
-      </HilightBmtiContain>
-      <Graph BMTI={bmtiData} />
+          <MidBmtiComments>당신의 BMTI 성향은?</MidBmtiComments>
+          <HilightBmtiContain>
+            <HilightBmitComments>[ {filter[0].type} ]</HilightBmitComments>
+            <Comments>입니다!</Comments>
+          </HilightBmtiContain>
+          <Graph BMTI={bmtiData} />
 
-      <ShareContents>
-        <SocialShare
-          _title={filter[0].cocktail}
-          _sub={`[ ${filter[0].type} ]`}
-          _imageUrl={filter[0].cocktailImg}
-          setCocktailType={setCocktailType}
-          _url={`https://quick-project.github.io${process.env.PUBLIC_URL}`}
-        />
-      </ShareContents>
+          <ShareContents>
+            <SocialShare
+              _title={filter[0].cocktail}
+              _sub={`[ ${filter[0].type} ]`}
+              _imageUrl={filter[0].cocktailImg}
+              setCocktailType={setCocktailType}
+              _url={`https://quick-project.github.io${process.env.PUBLIC_URL}`}
+            />
+          </ShareContents>
 
-      <BmtiTitle>
-        <BmtiTitleContents>
-          <HilightComments>
-            {`${filter[0].bmtiComment1}의 성향을 가진 당신의 칵테일!`}
-          </HilightComments>
-        </BmtiTitleContents>
-        <BmtiTitleContents>
-          <HilightComments>{` ${filter[0].bmtiComment2} `}</HilightComments>
-          <Comments>{filter[0].bmtiComment3}</Comments>
-        </BmtiTitleContents>
-      </BmtiTitle>
+          <BmtiTitle>
+            <BmtiTitleContents>
+              <HilightComments>
+                {`${filter[0].bmtiComment1}의 성향을 가진 당신의 칵테일!`}
+              </HilightComments>
+            </BmtiTitleContents>
+            <BmtiTitleContents>
+              <HilightComments>{` ${filter[0].bmtiComment2} `}</HilightComments>
+              <Comments>{filter[0].bmtiComment3}</Comments>
+            </BmtiTitleContents>
+          </BmtiTitle>
 
-      <BmtiImg src={filter[0].bmtiImg} />
+          <BmtiImg src={filter[0].bmtiImg} />
 
-      <BmtiContents>
-        <Comments>{filter[0].bmtiComment4}</Comments>
-        <Comments>{filter[0].bmtiComment5}</Comments>
-        <Comments>{filter[0].bmtiComment6}</Comments>
-        <Comments>{filter[0].bmtiComment7}</Comments>
-        <Comments>{filter[0].bmtiComment8}</Comments>
-      </BmtiContents>
-      {/* -------------------------------이 아래는 또 다른 로직으로 접근해야할 거 같은데 모르겠군요------------------------------------------------- */}
-      {/*  type = 'BMTI' type[0] B === showmodsflkj[0].type 'B' */}
-      {/* cocktailType */}
-      <BmtiViewMoreTitle>- 성향 해설 -</BmtiViewMoreTitle>
-      <BmtiViewMore>
-        <Comments>
-          {bmtiDetail[0].type}({bmtiDetail[0].fullType}) :{' '}
-          {bmtiDetail[0].comment}
-        </Comments>
-        <Comments>
-          {bmtiDetail[1].type}({bmtiDetail[1].fullType}) :{' '}
-          {bmtiDetail[1].comment}
-        </Comments>
-        <Comments>
-          {bmtiDetail[2].type}({bmtiDetail[2].fullType}) :{' '}
-          {bmtiDetail[2].comment}
-        </Comments>
-        <Comments>
-          {bmtiDetail[3].type}({bmtiDetail[3].fullType}) :{' '}
-          {bmtiDetail[3].comment}
-        </Comments>
-      </BmtiViewMore>
-      <br />
-      <ShareContents>
-        <SocialShare
-          _title={filter[0].cocktail}
-          _sub={`[ ${filter[0].type} ]`}
-          _imageUrl={filter[0].cocktailImg}
-          setCocktailType={setCocktailType}
-          _url={`https://quick-project.github.io${process.env.PUBLIC_URL}`}
-        />
-      </ShareContents>
+          <BmtiContents>
+            <Comments>{filter[0].bmtiComment4}</Comments>
+            <Comments>{filter[0].bmtiComment5}</Comments>
+            <Comments>{filter[0].bmtiComment6}</Comments>
+            <Comments>{filter[0].bmtiComment7}</Comments>
+            <Comments>{filter[0].bmtiComment8}</Comments>
+          </BmtiContents>
+          {/* -------------------------------이 아래는 또 다른 로직으로 접근해야할 거 같은데 모르겠군요------------------------------------------------- */}
+          {/*  type = 'BMTI' type[0] B === showmodsflkj[0].type 'B' */}
+          {/* cocktailType */}
+          <BmtiViewMoreTitle>- 성향 해설 -</BmtiViewMoreTitle>
+          <BmtiViewMore>
+            <Comments>
+              {bmtiDetail[0].type}({bmtiDetail[0].fullType}) :{' '}
+              {bmtiDetail[0].comment}
+            </Comments>
+            <Comments>
+              {bmtiDetail[1].type}({bmtiDetail[1].fullType}) :{' '}
+              {bmtiDetail[1].comment}
+            </Comments>
+            <Comments>
+              {bmtiDetail[2].type}({bmtiDetail[2].fullType}) :{' '}
+              {bmtiDetail[2].comment}
+            </Comments>
+            <Comments>
+              {bmtiDetail[3].type}({bmtiDetail[3].fullType}) :{' '}
+              {bmtiDetail[3].comment}
+            </Comments>
+          </BmtiViewMore>
+          <br />
+          <ShareContents>
+            <SocialShare
+              _title={filter[0].cocktail}
+              _sub={`[ ${filter[0].type} ]`}
+              _imageUrl={filter[0].cocktailImg}
+              setCocktailType={setCocktailType}
+              _url={`https://quick-project.github.io${process.env.PUBLIC_URL}`}
+            />
+          </ShareContents>
+        </>
+      )}
     </ResultContain>
   );
 };
