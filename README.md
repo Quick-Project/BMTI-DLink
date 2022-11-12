@@ -43,6 +43,8 @@ Jaehong Seo(피터)</b></sub></a><br /><a href="https://github.com/Quick-Project
 
 <br/>
 
+🍹 [나와 어울리는 칵테일 찾으러 가기](https://quick-project.github.io/BMTI-DLink)
+<br/>
 🥂 [Figjam](https://www.figma.com/file/x5Iwpe5bTOjTNyS5X554ox/%ED%80%B5-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%95%84%EC%9D%B4%EC%8A%A4%EB%B8%8C%EB%A0%88%EC%9D%B4%ED%82%B9-%EB%B0%8F-%EC%A3%BC%EC%A0%9C%EC%84%A0%EC%A0%95?node-id=0%3A1)
 <br/>
 🍸 [Figma](https://www.figma.com/file/eW6h99iC92BZNO4X2HLfGj/BMTI-UI?node-id=193%3A43)
