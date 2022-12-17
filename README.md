@@ -97,3 +97,54 @@ github flow는 시시각각 master에 머지될 때마다 배포가 이루어지
 브랜치 전략이 단순해 master 브랜치에서 pull 하고, 기능 구현하고, 머지하는 일의 반복이다.
 <br/>
 하지만 pull request에서 팀원간의 충분한 리뷰와 피드백이 진행되지 않으면 배포된 자체에서 버그가 발생할 수 있으므로 주의해야 한다.
+
+<hr>
+
+## 🥂 프로젝트 소개
+
+- 어떤 칵테일을 마실 지 몰라 고민하고 있는 유저!
+- 내 성향과 맞는 칵테일을 찾고 싶은 유저!
+- 간단한 설문을 통해 나와 맞는 칵테일을 찾을 수 있는 서비스 `🥂BMTI`를 이용해보세요!
+
+## 🍸 서비스 소개
+
+### **🏠 시작 페이지**
+
+<div style ="display:flex;align-items:center;flex-direction:column">
+<li style="margin-bottom:1rem; align-self:start;">
+시작하기 버튼을 누르면 내게 맞는 칵테일을 찾을 수 있는 설문조사 페이지에 접근할 수 있습니다.
+</li>
+<img src="https://user-images.githubusercontent.com/104412610/208248129-140bc298-7532-4896-bd6f-e02838b44641.gif" style="width:300px; margin-bottom : 1rem;">
+</div>
+
+### **📋 설문조사 페이지**
+
+<div style ="display:flex;align-items:center;flex-direction:column">
+<div style="margin-bottom:1rem; align-self:start">
+<li>칵테일 추천을 위한 설문조사를 진행할 수 있습니다.</li>
+<li>화면 상단 progressBar를 통해 설문조사의 진행도를 확인할 수 있습니다.</li>
+
+</div>
+<img src="https://user-images.githubusercontent.com/104412610/208248132-6dcbc461-624a-43ed-a16c-f576b7eb7f63.gif" style="width:300px">
+</div>
+
+### **🐌 로딩 페이지**
+
+<div style ="display:flex;align-items:center;flex-direction:column">
+<div style="margin-bottom:1rem; align-self:start">
+
+</div>
+<img src="https://user-images.githubusercontent.com/104412610/208248137-4fd59776-a890-48fc-a467-4ade9da3c3ab.gif" style="width:300px; margin-bottom : 1rem;">
+</div>
+
+### **✅ 결과 페이지**
+
+<div style ="display:flex;align-items:center;flex-direction:column">
+<div style="margin-bottom:1rem; align-self:start">
+<li>사용자 취향에 맞는 칵테일이 무엇인지 확인할 수 있습니다.</li>
+<li>사용자의 취향을 수치로 확인할 수 있습니다.</li>
+<li>칵테일과 관련된 유래를 확인할 수 있습니다.</li>
+<li>SNS버튼을 통해 프로젝트 홍보와 사용자의 칵테일 정보를 다른 사용자에게 공유할 수 있습니다.</li>
+</div>
+<img src="https://user-images.githubusercontent.com/104412610/208248246-7a8ff45d-b484-4cbf-a63a-dd68f5cf11f4.gif" style="width:300px; margin-bottom : 1rem;">
+</div>
